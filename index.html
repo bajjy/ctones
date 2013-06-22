@@ -1,0 +1,414 @@
+<!DOCTYPE HTML>
+<head>
+ <meta name="generator" content="Instantblueprint.com - Create a web project framework in seconds.">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+  <title>ctone — bajjy.com</title>
+ <meta name="description" content="Text styles on web by Constantine Bajjy">
+ <meta name="keywords" content="css3, html5, text-shadow, style, design, icons, photoshop">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="css/print.css" media="print">
+  <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+
+<!-- Start: wrapper -->
+<div class="blogcontent">
+<div class="blog">
+    
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="js/jquery.minicolors.css" rel="stylesheet">
+<script src="js/jquery.minicolors.js"></script>
+
+<div class="toolpad">
+	<div>
+		<input id="ct-text" type="text" value="bajjy.com" placeholder="Write text > press enter">
+	</div>
+
+	<div>
+
+		<input class="ct-size" type="text" value="13">
+		<input class="ct-size" type="range" value="13" min="0" max="100">
+	</div>
+	<div>
+		<span id="minclr"></span>
+		<input class="ct-shade-color" type="text" value="100,200,200" style="">
+	</div>
+	<div>
+
+		<input class="ct-rotate" type="range" value="0" min="0" max="360" style="background: #C0392B;">
+		<input class="ct-skew" type="range" value="0" min="-100" max="100" style="background: #F39C12;">
+	</div>
+
+	<div class="ct-textures" style="position: relative;height: 20%;">
+     <div class="hoble">
+        <img src="images/tmb/canvas.jpg" data-large="images/canvas.jpg" width="30px">
+        <img src="images/tmb/canvas-left.jpg" data-large="images/canvas-left.jpg" width="30px">
+        <img src="images/tmb/fabric-ang30.jpg" data-large="images/fabric-ang30.jpg" width="30px">
+        <img src="images/tmb/fabric-har.jpg" data-large="images/fabric-har.jpg" width="30px">
+        <img src="images/tmb/leather1.jpg" data-large="images/leather1.jpg" width="30px">
+        <img src="images/tmb/leather-left.jpg" data-large="images/leather-left.jpg" width="30px">
+        <img src="images/tmb/leather-right.jpg" data-large="images/leather-right.jpg" width="30px">
+        <img src="images/tmb/matte.jpg" data-large="images/matte.jpg" width="30px">
+        <img src="images/tmb/matte-left.jpg" data-large="images/matte-left.jpg" width="30px">
+        <img src="images/tmb/paper.jpg" data-large="images/paper.jpg" width="30px">
+        <img src="images/tmb/textile1.jpg" data-large="images/textile1.jpg" width="30px">
+        <img src="images/tmb/textr-purp.jpg" data-large="images/textr-purp.jpg" width="30px">
+        <img src="images/tmb/wood.jpg" data-large="images/wood.jpg" width="30px">
+        <img src="images/tmb/wood-left.jpg" data-large="images/wood-left.jpg" width="30px">
+        <img src="images/tmb/wood-right.jpg" data-large="images/wood-right.jpg" width="30px">
+      </div>
+	</div>
+
+	<div class="ct-styles" style="position: relative;height: 20%;">
+    <div class="hoble">
+  		<i class="stamped icon-camera" style=""></i>
+  		<i class="engraved icon-camera" style=""></i>
+  		<i class="dimentions icon-camera" style=""></i>
+  		<i class="plastc icon-camera" style=""></i>
+  		<i class="plastc-blr icon-camera" style=""></i>
+  		<i class="foil icon-camera" style=""></i>
+  		<i class="printed icon-camera" style=""></i>
+    </div>
+	</div>
+
+	<div style="position: relative;height: 20%;">
+		<div class="coded" style=""></div>
+	</div>
+</div>
+
+<div class="viewprt">
+<!--<div class="light1" style="width: 2000px; height: 2000px; left: -1030px; top:-1030px; opacity: 0.5; display: none;"></div>-->
+<img id="ct-tx" src="images/fabric-har.jpg" style="max-width: 100% ;display: block;">
+</div>
+
+<script>
+	function hex2rgb(hexStr){
+		// note: hexStr should be #rrggbb
+		var hex = parseInt(hexStr.substring(1), 16);
+		var r = (hex & 0xff0000) >> 16;
+		var g = (hex & 0x00ff00) >> 8;
+		var b = hex & 0x0000ff;
+		return [r, g, b];
+	}
+	function rgbToHex(r,g,b) {
+		return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+	}
+
+jQuery(document).ready(function($){
+	$("html, body").animate({
+	  "scrollTop": $('.viewprt').offset().top+25
+	},"slow");
+  	$('#ct-tx').before('<p class="ingot" style="">'+$('#ct-text').val()+'</p>');
+  	$(".ingot").ctones({stamped:true});
+  	$(".ingot").cnt();
+	$(".ingot").css('font-size', $(".ct-size[type='text']").val()+'em');
+
+	$('#minclr').minicolors({
+	   animationSpeed: 100,
+		animationEasing: 'swing',
+		control: 'hue',
+		defaultValue: '',
+		hide: null,
+		hideSpeed: 100,
+		inline: false,
+		letterCase: 'lowercase',
+		opacity: false,
+		position: 'default',
+		show: null,
+		showSpeed: 100,
+		swatchPosition: 'left',
+		textfield: false,
+		change: function(rgbObject) {
+			$(".ct-shade-color").val(hex2rgb(rgbObject))
+			$('.ingot').ctones(ctCurr);
+		}
+	});
+
+
+
+	$('.ct-styles .stamped').click(function() {
+  		$(".ingot").ctones({stamped:true});
+	});
+	$('.ct-styles .engraved').click(function() {
+  		$(".ingot").ctones({engraved:true});
+	});
+	$('.ct-styles .dimentions').click(function() {
+  		$(".ingot").ctones({dimentions:true});
+	});
+	$('.ct-styles .plastc').click(function() {
+  		$(".ingot").ctones({plastc:true});
+	});	
+	$('.ct-styles .plastc-blr').click(function() {
+  		$(".ingot").ctones({plastcBlr:true});
+	});
+	$('.ct-styles .foil').click(function() {
+  		$(".ingot").ctones({foil:true});
+	});	
+	$('.ct-styles .printed').click(function() {
+  		$(".ingot").ctones({printed:true});
+	});	
+});
+
+$(".ct-size[type='range']").change(function() {
+	$(".ct-size[type='text']").val($(this).val());
+	$(".ingot").css('font-size', $(".ct-size[type='text']").val()+'em');
+	$(".viewprt").height($("#ct-tx").height());
+	$(".ingot").cnt();
+});
+$(".ct-size[type='text']").keyup(function() {
+	$(".ct-size[type='range']").val($(this).val());
+	$(".ingot").css('font-size', $(".ct-size[type='text']").val()+'em');
+	$(".viewprt").height($("#ct-tx").height());
+	$(".ingot").cnt();
+});
+
+$(".ct-rotate, .ct-skew").change(function() {
+	$(".viewprt").height($("#ct-tx").height());
+	$(".ingot").cnt();
+	$(".ingot").geoms({rotate: $(".ct-rotate").val(), skew: $(".ct-skew").val()});
+});
+
+
+$(".ct-shade-color").keyup(function() {
+	/*$('#minclr').minicolors('value',rgbToHex($(this).val()));*/
+	$('.ingot').ctones(ctCurr);
+});
+
+$('#ct-text').keyup(function(e){
+	$('.ingot').html(this.value).cnt();
+});
+
+(function( $ ){
+$.fn.cnt = function(defaults) {
+  	$(this).each(function() {
+		this.style.top = ($(this).parent().height() - $(this).height())/2 + 'px';
+		this.style.left = ($(this).parent().width() - $(this).width())/2 + 'px';
+  	});
+
+}; 
+})( jQuery );
+
+(function( $ ){
+$.fn.geoms = function(defaults) {
+        $(this).css({
+            transform: "rotate("+defaults.rotate+"deg) skew("+defaults.skew+"deg)",
+            WebkitTransform: "rotate("+defaults.rotate+"deg) skew("+defaults.skew+"deg)",
+            MozTransform: "rotate("+defaults.rotate+"deg) skew("+defaults.skew+"deg)",
+            MsTransform: "rotate("+defaults.rotate+"deg) skew("+defaults.skew+"deg)",
+            OTransform: "rotate("+defaults.rotate+"deg) skew("+defaults.skew+"deg)"
+        });
+}; 
+})( jQuery );
+
+
+var ctCurr;
+
+(function( $ ){
+
+$.fn.ctones = function(defaults) {
+ctCurr = defaults;
+
+if(defaults.printed){
+   $(this).css({
+	  color : 'rgba(0,0,0,0)',
+	  textShadow: "0 0 0 rgba("+$('.ct-shade-color').val()+",0.2), 0 0 5px rgba("+$('.ct-shade-color').val()+",0.2), 0 0 18px rgba("+$('.ct-shade-color').val()+",0.3), -2px -1px 1px rgba(0, 0, 0,0.25)"
+	});
+}
+if(defaults.foil){
+   $(this).css({
+	  color : 'rgba(0,0,0,0)',
+	  textShadow: "0 0 10px rgba("+$('.ct-shade-color').val()+",0.5), -4px 0 1px rgba(250, 250, 250,0.9), 1px 4px 1px rgba(250, 250, 250,0.5), -2px 3px 2px rgba(250, 250, 250,0.9), 0px 3px 3px rgba(250, 250, 250,0.9), 10px 6px 19px rgba("+$('.ct-shade-color').val()+",0.2), 11px 6px 6px rgba("+$('.ct-shade-color').val()+",0.5), 7px 5px 3px rgba(38, 14, 5,0.7), 6px 8px 5px rgba(250, 250, 250,0.7), 10px 7px 2px rgba(250, 250, 250,0.5), 7px 10px 3px rgba(250, 250, 250,0.2), 8px 13px 7px rgba(0, 0, 0,0.9), 13px 12px 7px rgba(0, 0, 0,0.9), 15px 18px 11px rgba(0, 0, 0,0.5), 17px 16px 17px rgba(0, 0, 0,0.5)"
+	});
+}
+if(defaults.plastcBlr){
+   $(this).css({
+	  color : 'rgba(0,0,0,0)',
+	  textShadow: "-1px 0 19px rgba(255, 255, 255, 0.5), -2px 0 5px rgba("+$('.ct-shade-color').val()+", 0.1), -2px 0 5px rgba("+$('.ct-shade-color').val()+", 0.2), -2px 0 5px rgba("+$('.ct-shade-color').val()+", 0.2), -2px 0 5px rgba("+$('.ct-shade-color').val()+", 0.2), -2px 0 5px rgba("+$('.ct-shade-color').val()+", 0.3), -2px 0 5px rgba("+$('.ct-shade-color').val()+", 0.4), -2px 0 5px rgba("+$('.ct-shade-color').val()+", 0.5), 0 0 2px rgba("+$('.ct-shade-color').val()+", 0.3),3px 4px 12px rgba("+$('.ct-shade-color').val()+", 0.7), 3px 4px 4px rgba(156, 156, 156, 0.9), 3px 3px 2px rgba(120, 120, 120,0.0), 4px 6px 0px rgba(110, 110, 110,0.5), 6px 8px 12px rgba(0, 0, 0,0.9), 6px 8px 12px rgba(0, 0, 0,0.9), 6px 8px 23px rgba(0, 0, 0,0.9)"
+	});
+}
+if(defaults.plastc){
+   $(this).css({
+	  color : 'rgba(0,0,0,0)',
+	  textShadow: "-1px -1px 5px rgba("+$('.ct-shade-color').val()+", 0.3), 0 0 12px rgba(255, 255, 255, 0.9), 0 0 5px rgba("+$('.ct-shade-color').val()+", 0.75), 1px 1px 2px rgba(245, 245, 245, 0.95), 2px 2px 2px rgba(61, 61, 61,0.95), -2px -1px 0 rgba(255, 255, 255, 0.95), 1px -1px 1px rgba(255, 255, 255, 0.95), 2px 6px 5px rgba("+$('.ct-shade-color').val()+", 0.4), 5px 9px 3px rgba(0, 0, 0,0.9),/*shade*/ 5px 3px 5px rgba(0, 0, 0,0.9),/*shade*/ 7px 5px 10px rgba(0, 0, 0,0.8),/*shade*/ 10px 10px 15px rgba(0, 0, 0,0.8)"
+	});
+}
+if(defaults.dimentions){
+   $(this).css({
+	  color : 'rgba(0,0,0,0)',
+	  textShadow: "-4px -4px 0 rgba("+$('.ct-shade-color').val()+", 0.95), 9px 0px 35px rgba("+$('.ct-shade-color').val()+", 0.3), -3px -3px 3px rgba(228, 228, 228, 0.05),/*light*/ 0 0 2px rgba(31, 31, 31, 0.8), 1px 2px 5px rgba(36, 36, 36, 0.5),/*dimension*/ 2px 2px 1px rgba(22, 22, 22, 0.5),/*dimension*/ 4px 4px 1px rgba(19, 19, 19, 0.5),/*dimension*/ 5px 5px 1px rgba(14, 14, 14, 0.5),/*dimension*/ 7px 7px 1px rgba(14, 14, 14, 0.5),/*dimension*/ 8px 8px 1px rgba(12, 12, 12, 0.5),/*dimension*/ 9px 9px 1px rgba(10, 10, 10, 0.5),/*dimension*/ 10px 10px 1px rgba(0, 0, 0,0.5),/*dimension*/ 14px 13px 3px rgba(0, 0, 0,0.5),/*shade*/ 16px 15px 3px rgba(0, 0, 0,0.5),/*shade*/ 19px 17px 5px rgba(0, 0, 0,0.4),/*shade*/ 25px 20px 7px rgba(0, 0, 0,0.3),/*shade*/ 0 0 0 rgba(36, 7, 0,0)"
+	});
+}
+if(defaults.engraved){
+   $(this).css({
+	  color : 'rgba(0,0,0,0)',
+	  textShadow: "0 0 0 rgba("+$('.ct-shade-color').val()+", 0.6), 3px 0px 0 rgba(200, 200, 200,0.2),/*light*/ 1px 1px 1px rgba(200, 200, 200,0.1),/*light*/ -3px 2px 1px rgba(0, 0, 0,0.2),/*shade*/ -2px -2px 0 rgba(0, 0, 0,0.2),/*shade*/ -5px -5px 2px rgba(0, 0, 0,0.2),/*shade*/ -7px -6px 1px rgba(0, 0, 0,0.2), -3px -5px 1px rgba(0, 0, 0,0.2),/*shade*/ 0 0 0 rgba(36, 7, 0,0)"
+	});
+}
+if(defaults.stamped){
+   $(this).css({
+	  color : 'rgba(0,0,0,0)',
+	  textShadow: "0 0 0 rgba("+$('.ct-shade-color').val()+", 0.6), 2px 2px 2px rgba(255, 255, 255,0.3),/*light*/ -2px -1px 1px rgba(5, 0, 0,0.3),/*shade*/ -2px -2px 2px rgba(5, 0, 0,0.3),/*shade*/ 0 0 0 rgba(36, 7, 0,0)"
+	});
+}
+$('.coded').html('.ctones {<br/>'+ $('.ingot').attr('style')+'<br/>}');
+$('.coded').html($('.coded').html().replace(/;/g,';<br/>').replace(/rgba/g,'<br/>rgba'));
+};
+
+})( jQuery );
+
+$(".ct-textures img").click(function() {
+	$("#ct-tx").attr('src', $(this).attr('data-large'));
+});
+
+
+$("#ct-add-shade").click(function() {
+	$(".ingot").ctones({x: "-4px -4px 0 rgba(36, 7, 0,0.95)"})
+$("#ct-shade-count")[0].value++;
+});
+
+
+//keycodes
+$('#ct-text').keyup(function(e){
+if(e.keyCode == 13)
+{
+  $(this).trigger("enterKey");
+}
+});
+
+
+// данные из текстовой области
+$('#download').click(function(e){
+    $.generateFile({
+        filename    : 'your-ctone.css',
+        content     : $('.coded').text(),
+        script      : 'assets/js/download.php'
+    });
+    
+    e.preventDefault();
+});
+
+
+/*add class*/
+(function($) {
+
+    $.fn.pluginName = function(method) {
+
+        var methods = {
+
+            init : function(options) {
+                this.pluginName.settings = $.extend({}, this.pluginName.defaults, options);
+                return this.each(function() {
+                    var $element = $(this), // reference to the jQuery version of the current DOM element
+                         element = this;      // reference to the actual DOM element
+                    // code goes here
+                });
+
+            },
+
+            // a public method. for demonstration purposes only - remove it!
+            foo_public_method: function() {
+                // code goes here
+            }
+
+        }
+
+        var helpers = {
+            foo_private_method: function() {
+                // code goes here
+            }
+        }
+
+        if (methods[method]) {
+            return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if (typeof method === 'object' || !method) {
+            return methods.init.apply(this, arguments);
+        } else {
+            $.error( 'Method "' +  method + '" does not exist in pluginName plugin!');
+        }
+
+    }
+
+    $.fn.pluginName.defaults = {
+        foo: 'bar'
+    }
+
+    $.fn.pluginName.settings = {}
+
+})(jQuery);
+
+
+
+
+
+  /*$(".ingot").createAndApplyCssClass("shade"+$("#ct-shade-count").val(), {
+	'-moz-text-shadow' : shadeInfo,
+	'-webkit-text-shadow' : shadeInfo,
+	'text-shadow' : shadeInfo
+  });*/
+(
+function() {
+    var addRule;
+
+    if (typeof document.styleSheets != "undefined" && document.styleSheets) {
+        addRule = function(selector, rule) {
+            var styleSheets = document.styleSheets, styleSheet;
+            if (styleSheets && styleSheets.length) {
+                styleSheet = styleSheets[styleSheets.length - 1];
+                if (styleSheet.addRule) {
+                    styleSheet.addRule(selector, rule)
+                } else if (typeof styleSheet.cssText == "string") {
+                    styleSheet.cssText = selector + " {" + rule + "}";
+                } else if (styleSheet.insertRule && styleSheet.cssRules) {
+                    styleSheet.insertRule(selector + " {" + rule + "}", styleSheet.cssRules.length);
+                }
+            }
+        }
+    } else {
+        addRule = function(selector, rule, el, doc) {
+            el.appendChild(doc.createTextNode(selector + " {" + rule + "}"));
+        };
+    }
+
+    var createCssClass = function(className, cssProps, doc) {
+        doc = doc || document;
+
+        var head = doc.getElementsByTagName("head")[0];
+        if (head && addRule) {
+            var selector = "*." + className;
+            var ruleBits = [];
+            for (var i in cssProps) {
+                if (cssProps.hasOwnProperty(i)) {
+                    ruleBits.push(i + ":" + cssProps[i] + ";");
+                }
+            }
+            var rule = ruleBits.join("");
+            var styleEl = doc.createElement("style");
+            styleEl.type = "text/css";
+            styleEl.media = "screen";
+            head.appendChild(styleEl);
+            addRule(selector, rule, styleEl, doc);
+            styleEl = null;
+        }
+    };
+
+    jQuery.fn.createAndApplyCssClass = function(className, cssProps) {
+        createCssClass(className, cssProps, document);
+        this.addClass(className);
+    };
+})();
+</script>
+
+        
+    </div>
+</div>
+<!-- End: wrapper -->
+ </body>
+</html>

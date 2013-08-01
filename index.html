@@ -69,6 +69,12 @@
         <img src="images/tmb/skin1.jpg" data-large="images/skin1.jpg" width="30px">
         <img src="images/tmb/wood_hipster.jpg" data-large="images/wood_hipster.jpg" width="30px">
         <img src="images/tmb/hexes.jpg" data-large="images/hexes.jpg" width="30px">
+        <img src="images/tmb/grungy.jpg" data-large="images/grungy.jpg" width="30px">
+        <img src="images/tmb/leather2.jpg" data-large="images/leather2.jpg" width="30px">
+        <img src="images/tmb/metal-grid.jpg" data-large="images/metal-grid.jpg" width="30px">
+        <img src="images/tmb/wall-brick.jpg" data-large="images/wall-brick.jpg" width="30px">
+        <img src="images/tmb/wood-hipster2.jpg" data-large="images/wood-hipster2.jpg" width="30px">
+
       </div>
 	</div>
 
@@ -84,6 +90,10 @@
       <i class="vintage icon-camera" style=""></i>
       <i class="neon icon-camera" style=""></i>
       <i class="anaglyph icon-camera" style=""></i>
+      <i class="standing icon-camera" style=""></i>
+      <i class="grunge icon-camera" style=""></i>
+      <i class="hipster icon-camera" style=""></i>
+      <i class="wall icon-camera" style=""></i>
     </div>
 	</div>
 
@@ -173,7 +183,19 @@ jQuery(document).ready(function($){
   }); 
   $('.ct-styles .anaglyph').click(function() {
       $(".ingot").ctones({anaglyph:true});
-  });  	
+  });
+  $('.ct-styles .standing').click(function() {
+    $(".ingot").ctones({standing:true});
+  });
+  $('.ct-styles .grunge').click(function() {
+    $(".ingot").ctones({grunge:true});
+  }); 	
+  $('.ct-styles .hipster').click(function() {
+    $(".ingot").ctones({hipster:true});
+  });
+  $('.ct-styles .wall').click(function() {
+    $(".ingot").ctones({wall:true});
+  });
 });
 
 $(".ct-size[type='range']").change(function() {
@@ -235,6 +257,8 @@ var ctCurr;
 $.fn.ctones = function(defaults) {
 ctCurr = defaults;
 
+$(this).removeClass('shade1 shade2');
+
 if(defaults.anaglyph){
    $(this).css({
     color : 'rgba(0,0,0,0)',
@@ -295,6 +319,39 @@ if(defaults.stamped){
 	  textShadow: "0 0 0 rgba("+$('.ct-shade-color').val()+", 0.6), 2px 2px 2px rgba(255, 255, 255,0.3),/*light*/ -2px -1px 1px rgba(5, 0, 0,0.3),/*shade*/ -2px -2px 2px rgba(5, 0, 0,0.3),/*shade*/ 0 0 0 rgba(36, 7, 0,0)"
 	});
 }
+if(defaults.standing){
+   $(this).css({
+    color : 'rgba(0,0,0,0)',
+     textShadow:"rgba(0, 0, 0, 0.7) 0px 100px 90px, rgba(0, 0, 0,0.5) 0px 50px 100px, 0px 0px 0px rgba("+$('.ct-shade-color').val()+", 1), rgba(240, 240, 240, 1) 5px -3px 2px, rgba(230, 230, 230, 1) 6px -5px 2px, rgba(220, 220, 220, 1) 9px -8px 2px, rgba(215, 215, 215, 1) 11px -9px 2px, rgba(210, 210, 210, 1) 15px -13px 2px, rgba(205, 205, 205, 1) 19px -15px 2px"
+  });
+  $(this).addClass("shade1");
+  $(".ct-rotate[type='range']").val(12).change();
+  $(".ct-skew[type='range']").val(15).change();
+}
+if(defaults.grunge){
+   $(this).css({
+    color : 'rgba(0,0,0,0)',
+     textShadow:"rgba(255, 255, 255, 1) 0px 0px 0px, rgba("+$('.ct-shade-color').val()+", 0.9) -1px -1px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) -1px -1px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) -1px -1px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) -1px -1px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) -1px -1px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) -3px 1px 0px,rgba("+$('.ct-shade-color').val()+", 0.9) -3px -2px 0px,rgba("+$('.ct-shade-color').val()+", 0.9) -1px 3px 0px, rgba("+$('.ct-shade-color').val()+", 0.9) 1px -1px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 1px -1px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 1px -1px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 1px -1px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 1px -1px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 1px -1px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 1px -1px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 1px -1px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 3px -3px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 3px -3px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 3px -3px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 3px -3px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 7px -7px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 7px -7px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 7px -7px 3px, rgba("+$('.ct-shade-color').val()+", 0.9) 9px -9px 0px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -7px 0px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -4px 0px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -2px 0px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 1px 0px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 4px 0px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 5px 0px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px -7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px, rgba("+$('.ct-shade-color').val()+", 0.9) 10px 7px 20px"
+  });
+}
+
+if(defaults.hipster){
+   $(this).css({  
+    color: 'rgba(0, 0, 0, 0)',
+    textShadow: "rgba("+$('.ct-shade-color').val()+", 0.9) 0px 0px 0px, rgba("+$('.ct-shade-color').val()+", 0.9) 0px -6px 18px, rgba(50, 50, 50, 0.9) 0px -4px 2px, rgba(50, 50, 50, 0.9) 0px -4px 2px, rgba(50, 50, 50, 0.9) 0px -7px 3px, rgba(50, 50, 50, 0.9) 0px -9px 3px, rgba(50, 50, 50, 0.9) 0px -11px 4px, rgba(50, 50, 50, 0.9) 0px -15px 4px"
+  });
+  $(this).addClass("shade2");
+}
+
+if(defaults.wall){
+   $(this).css({  
+   color: 'rgba(0, 0, 0, 0)',
+   textShadow: "rgba("+$('.ct-shade-color').val()+", 0.8) -8px -4px 19px,rgba("+$('.ct-shade-color').val()+", 0.3) 2px 7px 14px, rgba("+$('.ct-shade-color').val()+", 1) 0px 0px 3px, rgba(50, 50, 50, 0.9) 4px 1px 0px, rgba(50, 50, 50, 0.9) 6px 2px 1px, rgba(50, 50, 50, 0.9) 9px 5px 0px, rgba(50, 50, 50, 0.9) 14px 5px 0px, rgba(0, 0, 0, 0.9) 15px 20px 19px, rgba(0, 0, 0, 0.5) 26px 29px 29px, rgba(0, 0, 0, 0.7) 32px 33px 37px"
+  });
+  $(".ct-rotate[type='range']").val(339).change();
+  $(".ct-skew[type='range']").val(-20).change();
+}
+    
 $('.coded').html('.ctones {<br/>'+ $('.ingot').attr('style')+'<br/>}');
 $('.coded').html($('.coded').html().replace(/;/g,';<br/>').replace(/rgba/g,'<br/>rgba'));
 };

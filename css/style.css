@@ -197,12 +197,12 @@ body {
     .ct-styles i{
         display: inline-block;
         padding: 1px;
-        background: #2980B9;
+        background: #3A445A;
         overflow: hidden;
         margin: 10px;
-        width: 40px;
-        height: 40px;
-        font-size: 30px;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
         border-radius: 50%;
         text-align: center;
         cursor: pointer
@@ -438,3 +438,135 @@ body {
         7px 7px 0 rgba(0, 255, 0,0.7),
         -7px -7px 0 rgba(0, 0, 255,0.7);
     } 
+
+    .standing{
+        color: rgba(255,255,255,0);
+        text-shadow:
+        rgb(255, 0, 0) 0px 0px 0px,
+        rgba(240, 240, 240, 1) 3px -2px 2px,
+        rgba(240, 240, 240, 1) 5px -3px 2px,
+        rgba(230, 230, 230, 1) 6px -5px 2px,
+        rgba(220, 220, 220, 1) 9px -8px 2px,
+        rgba(215, 215, 215, 1) 11px -9px 2px,
+        rgba(210, 210, 210, 1) 15px -13px 2px,
+        rgba(205, 205, 205, 1) 19px -15px 2px;
+    }
+    
+    .shade1:after {
+        position: absolute;
+        opacity: 0.4;
+        z-index: -1;
+        content: "";
+        top: 89%;
+        left: 9%;
+        width: 95%;
+        height: 2px;
+        background: #000;
+        border-radius: 0;
+        box-shadow: 0px 0px 5px 10px #000, 0px 0px 29px 16px #000, 0px 0px 90px 32px #000;
+    }
+    .grunge{
+        color: rgba(0, 0, 0, 0);
+        text-shadow:
+        rgba(255, 255, 255, 1) 0px 0px 0px,
+        rgba(255, 0, 0, 0.9) -1px -1px 3px,
+        rgba(255, 0, 0, 0.9) -1px -1px 3px,
+        rgba(255, 0, 0, 0.9) -1px -1px 3px,
+        rgba(255, 0, 0, 0.9) -1px -1px 3px,
+        rgba(255, 0, 0, 0.9) -1px -1px 3px,
+        rgba(255, 0, 0, 0.9) -3px 1px 0px,
+        rgba(255, 0, 0, 0.9) -3px -2px 0px,
+        rgba(255, 0, 0, 0.9) -1px 3px 0px,
+        rgba(255, 0, 0, 0.9) 1px -1px 3px,
+        rgba(255, 0, 0, 0.9) 1px -1px 3px,
+        rgba(255, 0, 0, 0.9) 1px -1px 3px,
+        rgba(255, 0, 0, 0.9) 1px -1px 3px,
+        rgba(255, 0, 0, 0.9) 1px -1px 3px,
+        rgba(255, 0, 0, 0.9) 1px -1px 3px,
+        rgba(255, 0, 0, 0.9) 1px -1px 3px,
+        rgba(255, 0, 0, 0.9) 1px -1px 3px,
+        rgba(255, 0, 0, 0.9) 3px -3px 3px,
+        rgba(255, 0, 0, 0.9) 3px -3px 3px,
+        rgba(255, 0, 0, 0.9) 3px -3px 3px,
+        rgba(255, 0, 0, 0.9) 3px -3px 3px,
+        rgba(255, 0, 0, 0.9) 7px -7px 3px,
+        rgba(255, 0, 0, 0.9) 7px -7px 3px,
+        rgba(255, 0, 0, 0.9) 7px -7px 3px,
+        rgba(255, 0, 0, 0.9) 9px -9px 0px,
+        rgba(255, 0, 0, 0.9) 10px -7px 0px,
+        rgba(255, 0, 0, 0.9) 10px -4px 0px,
+        rgba(255, 0, 0, 0.9) 10px -2px 0px,
+        rgba(255, 0, 0, 0.9) 10px 1px 0px,
+        rgba(255, 0, 0, 0.9) 10px 4px 0px,
+        rgba(255, 0, 0, 0.9) 10px 5px 0px,
+        rgba(255, 0, 0, 0.9) 10px -7px 20px,
+        rgba(255, 0, 0, 0.9) 10px -7px 20px,
+        rgba(255, 0, 0, 0.9) 10px -7px 20px,
+        rgba(255, 0, 0, 0.9) 10px -7px 20px,
+        rgba(255, 0, 0, 0.9) 10px -7px 20px,
+        rgba(255, 0, 0, 0.9) 10px -7px 20px,
+        rgba(255, 0, 0, 0.9) 10px -7px 20px,
+        rgba(255, 0, 0, 0.9) 10px -7px 20px,
+        rgba(255, 0, 0, 0.9) 10px -7px 20px,
+        rgba(255, 0, 0, 0.9) 10px -7px 20px,
+        rgba(255, 0, 0, 0.9) 10px -7px 20px,
+        rgba(255, 0, 0, 0.9) 10px -7px 20px,
+        rgba(255, 0, 0, 0.9) 10px -7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px,
+        rgba(255, 0, 0, 0.9) 10px 7px 20px;
+    }
+
+    .hipster{
+        color: rgba(0, 0, 0, 0);
+        text-shadow:
+        rgba(156, 31, 31, 0.9) 0px 0px 0px,
+        rgba(156, 31, 31, 0.9) 0px -6px 18px,
+        rgba(50, 50, 50, 0.9) 0px -4px 2px,
+        rgba(50, 50, 50, 0.9) 0px -4px 2px,
+        rgba(50, 50, 50, 0.9) 0px -7px 3px,
+        rgba(50, 50, 50, 0.9) 0px -9px 3px,
+        rgba(50, 50, 50, 0.9) 0px -11px 4px,
+        rgba(50, 50, 50, 0.9) 0px -15px 4px;
+    }
+
+    .shade2:after {
+        position: absolute;
+        opacity: 0.8;
+        z-index: -1;
+        content: "";
+        top: 0.8em;
+        left: -0.1em;
+        width: 100%;
+        height: 0.05em;
+        background: #000;
+        border-radius: 0;
+        box-shadow: 0px 0px 8px 8px #000, 0px 0px 36px 16px #000, 0px 0px 81px 32px #000, 0px 34px 73px 15px #000;
+    }
+
+    .wall{
+         color: rgba(0, 0, 0, 0);
+        text-shadow: rgba(209, 255, 130, 0.8) -8px -4px 19px,rgba(209, 255, 130, 0.3) 2px 7px 14px, rgba(209, 255, 130, 1) 0px 0px 3px, rgba(50, 50, 50, 0.9) 4px 1px 0px, rgba(50, 50, 50, 0.9) 6px 2px 1px, rgba(50, 50, 50, 0.9) 9px 5px 2px, rgba(50, 50, 50, 0.9) 14px 5px 0px, rgba(0, 0, 0, 0.9) 15px 20px 19px, rgba(0, 0, 0, 0.5) 26px 29px 29px, rgba(0, 0, 0, 0.7) 32px 33px 37px;
+    }
